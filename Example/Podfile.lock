@@ -1,40 +1,48 @@
 PODS:
+  - Nimble (8.0.9)
+  - Quick (2.2.1)
   - RxCocoa (5.1.3):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
-  - SFPod (0.1.0):
+  - SFAPPRealTimeLogCaughter (0.4.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
     - SnapKit
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - Nimble (~> 8.0.7)
+  - Quick (~> 2.2.0)
   - RxCocoa (~> 5.0)
   - RxSwift (~> 5.0)
-  - SFPod (from `../`)
+  - SFAPPRealTimeLogCaughter (from `../`)
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - Nimble
+    - Quick
     - RxCocoa
     - RxRelay
     - RxSwift
     - SnapKit
 
 EXTERNAL SOURCES:
-  SFPod:
+  SFAPPRealTimeLogCaughter:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
-  SFPod: efd7f8a689deace1dd4bcdf6dbcb8b5aab9bde74
+  SFAPPRealTimeLogCaughter: b243abf6bcf9e3b2b10b244017356a0b2562d469
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 7a76f32b615d15b8a9d0e9ed687a1f0b03b2c680
+PODFILE CHECKSUM: d8a68c42ccfac78980bf870d5b224a67fe4eba82
 
 COCOAPODS: 1.10.1

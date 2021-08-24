@@ -1,0 +1,36 @@
+{
+  "name": "SFAPPRealTimeLogCaughter",
+  "version": "0.4.0",
+  "summary": "APP real time log caughter.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "www.google.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "StephenFang": "stephenfang@etekcity.com.cn"
+  },
+  "source": {
+    "git": "https://github.com/JiaHaoFang/SFAPPRealTimeLogCaughter.git",
+    "tag": "0.4.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "swift_versions": "5.0",
+  "source_files": "SFAPPRealTimeLogCaughter/Classes/**/*",
+  "frameworks": "UIKit",
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "RxSwift": [
+      "~> 5.0"
+    ],
+    "RxCocoa": [
+      "~> 5.0"
+    ]
+  },
+  "swift_version": "5.0"
+}

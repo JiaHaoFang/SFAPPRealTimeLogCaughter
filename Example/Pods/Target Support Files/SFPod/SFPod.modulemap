@@ -1,6 +1,0 @@
-framework module SFPod {
-  umbrella header "SFPod-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,0 +1,6 @@
+framework module SFAPPRealTimeLogCaughter {
+  umbrella header "SFAPPRealTimeLogCaughter-umbrella.h"
+
+  export *
+  module * { export * }
+}
