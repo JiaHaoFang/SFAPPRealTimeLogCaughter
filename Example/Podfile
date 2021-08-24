@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'SFPod_Example' do
+  pod 'SFPod', :path => '../'
+  pod 'SnapKit'
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  
+  target 'SFPod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
