@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Launcher.h"
-#import <SFAPPRealTimeLogCaughter/SFAPPRealTimeLogCaughter-Swift.h>
+#import "SFAPPRealTimeLogCaughter/SFAPPRealTimeLogCaughter-Swift.h"
 
 @implementation Launcher
 
