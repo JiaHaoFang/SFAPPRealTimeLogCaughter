@@ -10,9 +10,6 @@
 
 @interface Launcher: NSObject
 
-+ (void)enable;
-+ (BOOL)isWithXCode;
-+ (BOOL)isSimulator;
 + (void)load;
 
 @end
