@@ -139,10 +139,11 @@ extension CaughterWindow: ReceiveDataDelegate {
             return
         }
         
-        self.textView.text = caughter.returnLog(self.searchBar.isActive)
-        
-        if self.atuoScrollSwitch.isOn {
-            self.textView.setContentOffset(CGPoint(x: 0, y: self.textView.contentSize.height <= self.textView.frame.height ? 0 : self.textView.contentSize.height - self.textView.frame.height/1.3), animated: false)
+        DispatchQueue.main.async {
+            self.textView.text = caughter.returnLog(self.searchBar.isActive)
+            if self.atuoScrollSwitch.isOn {
+                self.textView.setContentOffset(CGPoint(x: 0, y: self.textView.contentSize.height <= self.textView.frame.height ? 0 : self.textView.contentSize.height - self.textView.frame.height/1.3), animated: false)
+            }
         }
     }
 }
@@ -175,7 +176,7 @@ extension CaughterWindow {
         }
         self.caughter?.receiveDelegate = self
         self.rootViewController = UIViewController()
-        self.windowLevel =  UIWindow.Level.statusBar - 1
+        self.windowLevel =  UIWindow.Level.alert + 1
         self.isUserInteractionEnabled = true
         self.backgroundColor = UIColor.clear
         self.createWakeUpPage()
@@ -288,7 +289,7 @@ extension CaughterWindow {
         case .began:
             break
         case .changed:
-            let point = gesture.translation(in: self.wakeUpView)
+            let point = gesture.translation(in: UIApplication.shared.keyWindow)
             self.center = CGPoint(x: self.center.x + point.x, y: self.center.y + point.y)
             if self.center.y <= SafeAreaTopH + sizeOfFloatBtn().y/2 {
                 self.center.y = SafeAreaTopH + sizeOfFloatBtn().y/2
@@ -297,7 +298,7 @@ extension CaughterWindow {
             }
             break
         case .ended:
-            let point = gesture.translation(in: self.wakeUpView)
+            let point = gesture.translation(in: UIApplication.shared.keyWindow)
             var newPoint = CGPoint(x: self.center.x + point.x, y: self.center.y + point.y)
             
             if newPoint.x < UIScreen.main.bounds.width / 2.0 {
@@ -315,7 +316,7 @@ extension CaughterWindow {
             break
         }
         
-        gesture.setTranslation(.zero, in: self.wakeUpView)
+        gesture.setTranslation(.zero, in: UIApplication.shared.keyWindow)
     }
     
     @objc func logWindowDragAction(gesture: UIPanGestureRecognizer) {
@@ -324,7 +325,7 @@ extension CaughterWindow {
         case .began:
             break
         case .changed:
-            let point = gesture.translation(in: self.showLogView)
+            let point = gesture.translation(in: UIApplication.shared.keyWindow)
             self.center = CGPoint(x: self.center.x, y: self.center.y + point.y)
             if self.center.y <= SafeAreaBottomH + sizeOfFloatBtn().y/2 {
                 self.center.y = SafeAreaBottomH + sizeOfFloatBtn().y/2
@@ -333,7 +334,7 @@ extension CaughterWindow {
             }
             break
         case .ended:
-            let point = gesture.translation(in: self.showLogView)
+            let point = gesture.translation(in: UIApplication.shared.keyWindow)
             var newPoint = CGPoint(x: self.center.x, y: self.center.y + point.y)
             
             if newPoint.y <= SafeAreaTopH + self.bounds.height/2 {
@@ -352,6 +353,6 @@ extension CaughterWindow {
             break
         }
         
-        gesture.setTranslation(.zero, in: self.showLogView)
+        gesture.setTranslation(.zero, in: UIApplication.shared.keyWindow)
     }
 }

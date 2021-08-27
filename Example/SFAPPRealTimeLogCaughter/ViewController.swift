@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
+    let period: Double = 0.1
 
     //MARK: - Subviews
     lazy var page: UIView = {
@@ -57,14 +58,14 @@ class ViewController: UIViewController {
         if timer1 == nil {
             DispatchQueue.main.async {
                 self.sw.isOn = true
-                self.timer1 = Foundation.Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.print1), userInfo: nil, repeats: true)
+                self.timer1 = Foundation.Timer.scheduledTimer(timeInterval: self.period, target: self, selector: #selector(self.print1), userInfo: nil, repeats: true)
             }
         }
         if timer2 == nil {
             DispatchQueue.main.async {
-                Thread.sleep(forTimeInterval: 0.005)
+                Thread.sleep(forTimeInterval: self.period/2)
                 self.sw.isOn = true
-                self.timer2 = Foundation.Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.print2), userInfo: nil, repeats: true)
+                self.timer2 = Foundation.Timer.scheduledTimer(timeInterval: self.period, target: self, selector: #selector(self.print2), userInfo: nil, repeats: true)
             }
         }
         

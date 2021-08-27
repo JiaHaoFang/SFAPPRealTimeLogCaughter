@@ -40,7 +40,6 @@ extension LogCatchAndProcess {
         var data: String = ""
         for item in (isSearching ? matchedLogData.getLog().suffix(MaxDisplayNumberInTextView) : rawLogData.getLog().suffix(MaxDisplayNumberInTextView)) {
             data += item
-            data += "----------\n"
         }
         return data
     }
@@ -69,17 +68,13 @@ extension LogCatchAndProcess {
                 let str = String(data: data, encoding: .utf8) ?? "<Non-utf8 data of size\(data.count)>\n"
                 self?.rawLogData.setLog(data: str)
                 self?.dataFiltAndAppend()
-                DispatchQueue.main.async {
-                    self?.receiveDelegate?.updateData()
-                }
+                self?.receiveDelegate?.updateData()
             }
         } else {
             dup2(self.originalERR, STDERR_FILENO)
             dup2(self.originalOUT, STDOUT_FILENO)
         }
-        DispatchQueue.main.async {
-            self.receiveDelegate?.updateData()
-        }
+        self.receiveDelegate?.updateData()
     }
 }
 
@@ -95,13 +90,9 @@ extension LogCatchAndProcess {
         self.matchedLogData.clear()
         for item in self.rawLogData.getLog() {
             if item.contains(self.matchStr) {
-                self.addMatchedLogData(item)
+                self.matchedLogData.setLog(data: item)
             }
         }
-    }
-    
-    private func addMatchedLogData(_ data: String) {
-        self.matchedLogData.setLog(data: data)
     }
 }
 

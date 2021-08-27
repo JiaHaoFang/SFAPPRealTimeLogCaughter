@@ -125,6 +125,7 @@
 		4A9E7C1A8B697A1C0B0A1E0DF855A591 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978B6ECB26F1D72B2354D5FB2615603E /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4ADE5FC9505A3BF7DF17AF9756585116 /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 430C7457EFC66617618DDFC6E3AE3E57 /* QCKDSL.m */; };
 		4C63E0E294EDE8F214C7A5EC0B27C50A /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B24F6827C743E2C9484328298C339 /* ConstraintConfig.swift */; };
+		4D59F5A926D8CDCF0054D2E6 /* SaveArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59F5A826D8CDCF0054D2E6 /* SaveArray.swift */; };
 		4D9A7002E8CBEBC36BC8517653C6A113 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA74DAE7B4E903C914CA8AC6000E0F /* Foundation.framework */; };
 		4DAEB64861955FE51DC5DFD39B2A1C1D /* RxTableViewDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486ACC9811CF840E404E39E525322FD3 /* RxTableViewDelegateProxy.swift */; };
 		4E1DBC9FF76D6AD924D1356260438074 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A395FBCC2942E527619899168CADC03 /* QuickSelectedTestSuiteBuilder.swift */; };
@@ -743,6 +744,7 @@
 		4C344216E732EDDE06E3857403D29A45 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		4C5FDCDBAB6BDEBAA45E598465E11A42 /* PublishRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublishRelay.swift; path = RxRelay/PublishRelay.swift; sourceTree = "<group>"; };
 		4D4CD1A0B04FE186771E99F326070A67 /* SchedulerServices+Emulation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SchedulerServices+Emulation.swift"; path = "RxSwift/Schedulers/SchedulerServices+Emulation.swift"; sourceTree = "<group>"; };
+		4D59F5A826D8CDCF0054D2E6 /* SaveArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArray.swift; sourceTree = "<group>"; };
 		4DAB47C12157C35853371D4D55D8EF32 /* NSObject+Rx+RawRepresentable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Rx+RawRepresentable.swift"; path = "RxCocoa/Foundation/NSObject+Rx+RawRepresentable.swift"; sourceTree = "<group>"; };
 		4DAEADBB1CC39EF38BA18D9ED6B5D6D8 /* ControlTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ControlTarget.swift; path = RxCocoa/Common/ControlTarget.swift; sourceTree = "<group>"; };
 		4EA301B81231DEE6BF11C0FE214E396F /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
@@ -798,7 +800,7 @@
 		70FC0B3F032B8EAD837FA085E6E205B2 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		72245A224F9969AE5785D8EA39E87F6C /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		729D3B366F51F035C52EC64A586E7390 /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
-		72F81C3B12D346C67C0431878E07CECA /* SFAPPRealTimeLogCaughter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFAPPRealTimeLogCaughter.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		72F81C3B12D346C67C0431878E07CECA /* SFAPPRealTimeLogCaughter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SFAPPRealTimeLogCaughter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7311C8216639487F8377F7D625BDFD27 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		73B7172CD710F14CCC77D4973C1A1DEC /* CacheQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CacheQueue.swift; sourceTree = "<group>"; };
 		73E5EB54843ECE94B4F335EB4806BE6E /* ControlProperty+Driver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ControlProperty+Driver.swift"; path = "RxCocoa/Traits/Driver/ControlProperty+Driver.swift"; sourceTree = "<group>"; };
@@ -1662,6 +1664,7 @@
 			children = (
 				73B7172CD710F14CCC77D4973C1A1DEC /* CacheQueue.swift */,
 				5C50CF684EA33F9B36161E6B3C712F4D /* LogDataModel.swift */,
+				4D59F5A826D8CDCF0054D2E6 /* SaveArray.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2400,6 +2403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D59F5A926D8CDCF0054D2E6 /* SaveArray.swift in Sources */,
 				7BB983701E994D6D88C80ACEA506DCA3 /* CacheQueue.swift in Sources */,
 				B26CC5849BE4196B8918ACADDDD73844 /* CaughterWindow.swift in Sources */,
 				9DEEE83F05583F1B55F664F4FF1DFFBB /* Launcher.m in Sources */,

@@ -5,7 +5,7 @@ platform :ios, '9.0'
 target 'SFAPPRealTimeLogCaughter_Example' do
   pod 'SFAPPRealTimeLogCaughter', :path => '../'
   pod 'SnapKit'
-  pod 'RxSwift', '~> 5.0'
+#  pod 'RxSwift', '~> 5.0'
   pod 'RxCocoa', '~> 5.0'
 
   target 'SFAPPRealTimeLogCaughter_Tests' do

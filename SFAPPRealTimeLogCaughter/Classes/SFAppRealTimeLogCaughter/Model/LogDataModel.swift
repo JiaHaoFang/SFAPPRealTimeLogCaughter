@@ -7,14 +7,32 @@
 
 import Foundation
 class LogDataModel {
-    private var logData: [String] = []
+    private var queue = DispatchQueue(label: "SafeArrayModel", attributes: .concurrent)
+    private var logData: [String] = [] {
+        didSet {
+            queue.async(flags: .barrier) {
+                if self.logData.count > MaxStorageInModel {
+                    self.logData = self.logData.suffix(MaxStorageInModel)
+                }
+            }
+        }
+    }
     public var length: Int {
         get {
-            var count: Int = 0
-            for item in logData {
-                count += item.count
+            queue.sync {
+                var count: Int = 0
+                for item in self.logData {
+                    count += item.count
+                }
+                return count
             }
-            return count
+        }
+    }
+    private var count: Int {
+        get {
+            queue.sync {
+                return self.logData.count
+            }
         }
     }
 
@@ -23,22 +41,30 @@ class LogDataModel {
     }
     
     public func setLog(data: String) {
-        logData.append(data)
+        queue.async(flags: .barrier) {
+            self.logData.append(data)
+        }
     }
     
     public func getLog() -> [String] {
-        return self.logData
+        queue.sync {
+            return self.logData
+        }
     }
     
     public func getLogAsString() -> String {
-        var data: String = ""
-        for item in self.logData {
-            data += item
+        queue.sync {
+            var data: String = ""
+            for item in self.logData {
+                data += item
+            }
+            return data
         }
-        return data
     }
     
     public func clear() {
-        self.logData = []
+        queue.async(flags: .barrier) {
+            self.logData.removeAll()
+        }
     }
 }

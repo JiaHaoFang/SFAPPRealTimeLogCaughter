@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+let isIPhoneX = SFMethod.isIPhoneX()
+let SafeAreaBottomH: CGFloat = isIPhoneX ? iPhoneXBottomH : 0
+let iPhoneXBottomH: CGFloat = 34.0
+let SafeAreaTopH: CGFloat = isIPhoneX ? 44.0 : 20.0
+let MaxDisplayNumberInTextView: Int = 50
+let MaxStorageInModel: Int = 2000
+
 struct sizeOfFloatBtn {
     let x: CGFloat = 40.0
     let y: CGFloat = 40.0
@@ -31,12 +38,6 @@ struct SFMethod {
         }
     }
 }
-
-let isIPhoneX = SFMethod.isIPhoneX()
-let SafeAreaBottomH: CGFloat = isIPhoneX ? iPhoneXBottomH : 0
-let iPhoneXBottomH: CGFloat = 34.0
-let SafeAreaTopH: CGFloat = isIPhoneX ? 44.0 : 20.0
-let MaxDisplayNumberInTextView: Int = 100
 
 struct MyColor {
     let backgroundColor: UIColor = UIColor(red: 0, green: 14/255, blue: 30/255, alpha: 0.6)
