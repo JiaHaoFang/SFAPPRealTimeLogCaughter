@@ -25,7 +25,7 @@ import UIKit
                         }
                     }
                 } else {
-                    self.shared.showLogWindow = CaughterWindow(frame: CGRect.zero)
+                    self.shared.showLogWindow = CaughterWindow(frame: UIScreen.main.bounds)
                 }
             }
             self.shared.showLogWindow?.show()
