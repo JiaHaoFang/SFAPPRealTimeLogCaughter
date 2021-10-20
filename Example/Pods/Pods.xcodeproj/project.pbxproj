@@ -457,7 +457,6 @@
 		F9E82667CD99D053D7B5EF5B8624039D /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838EAE7EAC5682D02BCEDC7B6394F587 /* SubscribeOn.swift */; };
 		F9E85548BF1EF8C5035BAF92233C34B6 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7144C87736EFB56F36AE82DF52A7C /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FB1F62B2A744B23A349CF8877CF2A09B /* RxPickerViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20FDF21B36AED3D8177A93AF15CC64D /* RxPickerViewAdapter.swift */; };
-		FB2EAC5EFD5A744FFAB8EF22B92A3B04 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D86CC73F39DFA28AFEFC62A1765D4 /* ReplaceMe.swift */; };
 		FB9C072E4C56CC2898DB0D8955C14051 /* AsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B62802AC7FC81CBA37DD7FBE2412403 /* AsSingle.swift */; };
 		FBA2D23B46D47BBFC970D49C5A3B6BDE /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D088395600D82F6CAA8B070B26E86CF3 /* ConstraintMultiplierTarget.swift */; };
 		FCB07678FF31509D157300B7DC1240D6 /* KeyPathBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A0AE23727B49F976948C80F5E1F9F5 /* KeyPathBinder.swift */; };
@@ -580,7 +579,6 @@
 		05FD4005D4062C2A98E95E66A81A46C1 /* RecursiveLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecursiveLock.swift; path = Platform/RecursiveLock.swift; sourceTree = "<group>"; };
 		065B32B200A967AD554B13632068C51B /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
 		0740A609BD3031414A2B301652BD0723 /* NSControl+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSControl+Rx.swift"; path = "RxCocoa/macOS/NSControl+Rx.swift"; sourceTree = "<group>"; };
-		075D86CC73F39DFA28AFEFC62A1765D4 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = SFAPPRealTimeLogCaughter/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		081E48F400E8F56D64B22726583E2AB0 /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = RxSwift/Observables/WithLatestFrom.swift; sourceTree = "<group>"; };
 		08D919780648C99F1FE4D2028624E31B /* AsyncLock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncLock.swift; path = RxSwift/Concurrency/AsyncLock.swift; sourceTree = "<group>"; };
 		090A23FC990B011A257E374FFF8B4270 /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
@@ -1640,7 +1638,6 @@
 		C4AF0B7D37B10C24602E5C663B6CF47A /* SFAPPRealTimeLogCaughter */ = {
 			isa = PBXGroup;
 			children = (
-				075D86CC73F39DFA28AFEFC62A1765D4 /* ReplaceMe.swift */,
 				C5AE1B6F2B9073B6D099093B32E2EC90 /* Pod */,
 				F48E11A7A1AC2D3D1C983AA2FC739594 /* SFAppRealTimeLogCaughter */,
 				F94974484828A26B9FCB49B193F9C7DD /* Support Files */,
@@ -2411,7 +2408,6 @@
 				B9D669923135B50F5C1FE0C853567155 /* LogDataModel.swift in Sources */,
 				D904F0D5D28BF0DF4A17801E503F8069 /* ParamConfigure.swift in Sources */,
 				2D6C9A8D07A584895BD596D33E33A8D2 /* ProtocolDelegate.swift in Sources */,
-				FB2EAC5EFD5A744FFAB8EF22B92A3B04 /* ReplaceMe.swift in Sources */,
 				0A91E1B0F2E6116134B6E782B3F80D49 /* SearchBarForWindow.swift in Sources */,
 				39C28378BF03C5832D2A49AC97FEB6A9 /* SFAPPRealTimeLogCaughter-dummy.m in Sources */,
 				76F460B0E3ADA54703FEB2B4B22F1973 /* SFAppRealTimeLogCaughter.swift in Sources */,
