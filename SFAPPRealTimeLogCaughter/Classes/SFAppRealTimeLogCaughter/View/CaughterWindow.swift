@@ -103,8 +103,7 @@ class CaughterWindow: UIWindow {
             guard let self = self else { return }
             let pasteBoard = UIPasteboard.general
             pasteBoard.string = alert.message
-            let toVC = UIActivityViewController(activityItems: [URL(fileURLWithPath: self.caughter!.filePathStr)], applicationActivities: nil)
-            self.rootViewController?.present(toVC, animated: true, completion: nil)
+            self.sharing()
         })
         alert.addAction(ok)
         alert.addAction(share)
@@ -192,6 +191,17 @@ extension CaughterWindow {
     private func showShowLogView() {
         self.wakeUpView.isHidden = true
         self.showLogView.isHidden = false
+    }
+    
+    private func sharing() {
+        let toVC = UIActivityViewController(activityItems: self.caughter?.unsavedFileURL() ?? [], applicationActivities: nil)
+        toVC.completionWithItemsHandler = { [weak self] (_ activityType: UIActivity.ActivityType?, _ completed: Bool, _ returnedItems: [Any]?, _ activityError: Error?) -> Void in
+            guard let self = self else { return }
+            if completed {
+                self.caughter?.saveSuccess()
+            }
+        }
+        self.rootViewController?.present(toVC, animated: true, completion: nil)
     }
 }
 
