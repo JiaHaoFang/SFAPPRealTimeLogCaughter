@@ -17,7 +17,7 @@ class LogCatchAndProcess {
     private var pipe = Pipe()
     private let fileDelegateQueue = DispatchQueue.global()
     private var source: DispatchSourceRead?
-    private var filePathStr: String = ""
+    public var filePathStr: String = ""
     public var matchStr: String = ""
     private var onOffState: Bool = false
     

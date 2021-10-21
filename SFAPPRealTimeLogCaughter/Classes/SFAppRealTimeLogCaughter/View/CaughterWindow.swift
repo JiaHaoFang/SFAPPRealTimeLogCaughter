@@ -99,12 +99,15 @@ class CaughterWindow: UIWindow {
     private lazy var alertWindow: UIAlertController = {
         let alert = UIAlertController(title: "Saved successfully!\nFile path is:", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-        let copy = UIAlertAction(title: "Copy", style: .default, handler: {_ in
+        let share = UIAlertAction(title: "Share File", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
             let pasteBoard = UIPasteboard.general
             pasteBoard.string = alert.message
+            let toVC = UIActivityViewController(activityItems: [URL(fileURLWithPath: self.caughter!.filePathStr)], applicationActivities: nil)
+            self.rootViewController?.present(toVC, animated: true, completion: nil)
         })
         alert.addAction(ok)
-        alert.addAction(copy)
+        alert.addAction(share)
         return alert
     }()
     
