@@ -18,7 +18,7 @@ class LogCatchAndProcess {
     private let fileDelegateQueue = DispatchQueue.global()
     private var source: DispatchSourceRead?
     private var filePathStr: String = ""
-    private var matchStr: String = ""
+    public var matchStr: String = ""
     private var onOffState: Bool = false
     
     private var originalERR: Int32 = dup(STDERR_FILENO)
