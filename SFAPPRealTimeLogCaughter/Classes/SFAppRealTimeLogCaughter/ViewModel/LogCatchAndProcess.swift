@@ -20,7 +20,7 @@ class LogCatchAndProcess {
     private var filePathStr: [String] = []
     private var savedFilePathStr: [String] = []
     public var matchStr: String = ""
-    private var onOffState: Bool = false
+    public var onOffState: Bool = false
     
     private var originalERR: Int32 = dup(STDERR_FILENO)
     private var originalOUT: Int32 = dup(STDOUT_FILENO)
@@ -32,7 +32,7 @@ class LogCatchAndProcess {
 
     deinit {
         pipe.fileHandleForReading.readabilityHandler = nil
-        self.removeAllFile()
+//        self.removeAllFile()
     }
 }
 
@@ -164,24 +164,24 @@ extension LogCatchAndProcess {
         return url
     }
     
-    private func removeAllFile() {
+    public func removeAllFile() {
         let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = allPaths.first!
         let saveFileFolderStr = documentsDirectory + "/Log"
         LogCatchAndProcess.removeFolder(folderUrl: saveFileFolderStr)
     }
     
-    static func removeFolder(folderUrl:String) {
+    static func removeFolder(folderUrl: String) {
         let fileManger = FileManager.default
         let filess:[AnyObject]? = fileManger.subpaths(atPath: folderUrl)! as [AnyObject]
         guard let files = filess else { return }
-        for file in files
+        for file in files.reversed()
         {
             do{
                 try fileManger.removeItem(atPath: folderUrl + "/\(file)")
-                print("Success to remove folder.")
+                print("Success to remove folder: \(file)")
             }catch{
-                print("Failder to remove folder")
+                print("Failder to remove folder...")
             }
         }
         

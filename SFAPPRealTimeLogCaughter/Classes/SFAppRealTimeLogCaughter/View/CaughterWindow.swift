@@ -28,6 +28,9 @@ class CaughterWindow: UIWindow {
     }()
     private lazy var wakeUpBtn: UIButton = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: sizeOfFloatBtn().x, height: sizeOfFloatBtn().y))
+        btn.setTitle("Off", for: .normal)
+        btn.setTitleColor(.gray, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.backgroundColor = UIColor.init(red: 0, green: 193/255, blue: 188/255, alpha: 0.5)
         btn.layer.cornerRadius = sizeOfFloatBtn().corner
         btn.addTarget(self, action: #selector(floatBtnAction(sender:)), for: .touchUpInside)
@@ -96,7 +99,7 @@ class CaughterWindow: UIWindow {
         s.isOn = true
         return s
     }()
-    private lazy var alertWindow: UIAlertController = {
+    private lazy var alertWindowForShare: UIAlertController = {
         let alert = UIAlertController(title: "Saved successfully!\nFile path is:", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         let share = UIAlertAction(title: "Share File", style: .default, handler: { [weak self] _ in
@@ -108,6 +111,17 @@ class CaughterWindow: UIWindow {
         alert.addAction(ok)
         alert.addAction(share)
         return alert
+    }()
+    private lazy var alertWindowForClear: UIAlertController = {
+        let clear = UIAlertController(title: "Screen cleared", message: "Do you want to delete all log files in the local folder at the same time?", preferredStyle: .alert)
+        let no = UIAlertAction(title: "No", style: .default, handler: nil)
+        let clean = UIAlertAction(title: "Clean Files", style: .default, handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.caughter?.removeAllFile()
+        })
+        clear.addAction(no)
+        clear.addAction(clean)
+        return clear
     }()
     
     required init?(coder: NSCoder) {
@@ -300,12 +314,13 @@ extension CaughterWindow {
         NSLog("hideBtnAction")
     }
     @objc private func saveBtnAction() {
-        alertWindow.message = self.caughter?.saveFile()
-        self.rootViewController?.present(alertWindow, animated: true, completion: nil)
+        alertWindowForShare.message = self.caughter?.saveFile()
+        self.rootViewController?.present(alertWindowForShare, animated: true, completion: nil)
         NSLog("saveBtnAction")
     }
     @objc private func clearBtnAction() {
         self.caughter?.cleanAllAndStartAgain()
+        self.rootViewController?.present(alertWindowForClear, animated: true, completion: nil)
         NSLog("clearBtnAction")
     }
     
@@ -314,9 +329,11 @@ extension CaughterWindow {
             return
         }
         if caughter.switchState() {
+            self.wakeUpBtn.setTitle("On", for: .normal)
             self.onOffBtn.setTitle("On", for: .normal)
             NSLog("State: On")
         } else {
+            self.wakeUpBtn.setTitle("Off", for: .normal)
             self.onOffBtn.setTitle("Off", for: .normal)
             NSLog("State: Off")
         }
